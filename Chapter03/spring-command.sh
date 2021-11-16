@@ -16,4 +16,7 @@ cd Chaper03/1-spring-init
 
 
 cd Chaper03/2-basic-rest-services
-java -jar microservices/product-service/build/libs/*.jar & java -jar microservices/product-composite-service/build/libs/*.jar & java -jar microservices/recommendation-service/build/libs/*.jar & java -jar microservices/review-service/build/libs/*.jar
+java -jar microservices/product-service/build/libs/*.jar & \
+java -jar microservices/product-composite-service/build/libs/*.jar & \
+java -jar microservices/recommendation-service/build/libs/*.jar & \
+java -jar microservices/review-service/build/libs/*.jar
