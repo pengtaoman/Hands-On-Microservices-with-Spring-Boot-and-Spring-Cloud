@@ -51,3 +51,6 @@ kubectl delete secret config-client-credentials
 kubectl delete -f kubernetes/services/overlays/dev
 
 kubectl delete -k kubernetes/services/base
+
+
+=================================
