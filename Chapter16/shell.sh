@@ -24,7 +24,7 @@ kubectl create secret generic config-client-secrets \
 
 kubectl create secret generic config-client-credentials \
 --from-literal=CONFIG_SERVER_USR=dev-usr \
---from-literal=CONFIG_SERVER_USR_PASSWORD=dev_pwd \
+--from-literal=CONFIG_SERVER_PWD=dev-pwd \
 --save-config
 
 docker pull openzipkin/zipkin:2.12.9
@@ -49,3 +49,5 @@ kubectl delete secret config-client-secrets
 kubectl delete secret config-client-credentials
 
 kubectl delete -f kubernetes/services/overlays/dev
+
+kubectl delete -k kubernetes/services/base
