@@ -32,6 +32,7 @@ docker pull openzipkin/zipkin:2.12.9
 kubectl apply -f kubernetes/services/overlays/dev/rabbitmq-dev.yml
 kubectl apply -f kubernetes/services/overlays/dev/mongodb-dev.yml
 kubectl apply -f kubernetes/services/overlays/dev/mysql-dev.yml
+
 kubectl wait --timeout=600s --for=condition=ready pod --all
 
 
