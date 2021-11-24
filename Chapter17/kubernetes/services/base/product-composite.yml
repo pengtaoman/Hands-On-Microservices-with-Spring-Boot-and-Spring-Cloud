@@ -12,6 +12,7 @@ spec:
       labels:
         app: product-composite
     spec:
+      nodeName: centos111
       containers:
       - name: comp
         image: hands-on/product-composite-service
