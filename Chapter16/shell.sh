@@ -54,3 +54,40 @@ kubectl delete -k kubernetes/services/base
 
 
 =================================
+
+: ${HOST=localhost}
+: ${PORT=31443}
+: ${PROD_ID_REVS_RECS=2}
+: ${PROD_ID_NOT_FOUND=13}
+: ${PROD_ID_NO_RECS=114}
+: ${PROD_ID_NO_REVS=214}
+: ${NAMESPACE=hands-on}
+ACCESS_TOKEN=$(curl -X POST -k https://writer:secret@$HOST:$PORT/oauth/token  -d grant_type=password -d username=magnus -d password=password -s| jq .access_token -r)
+AUTH="-H \"Authorization: Bearer $ACCESS_TOKEN\""
+echo $AUTH
+curl $AUTH -k https://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS -s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
