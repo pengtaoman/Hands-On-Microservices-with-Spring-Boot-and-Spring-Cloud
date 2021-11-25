@@ -12,6 +12,7 @@ spec:
       labels:
         app: config-server
     spec:
+      nodeName: centos111
       containers:
       - name: config-server
         image: hands-on/config-server

@@ -12,6 +12,7 @@ spec:
       labels:
         app: gateway
     spec:
+      nodeName: centos111
       containers:
       - name: gateway
         image: hands-on/gateway
