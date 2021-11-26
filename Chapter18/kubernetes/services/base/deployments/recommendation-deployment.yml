@@ -13,6 +13,7 @@ spec:
         app: recommendation
         version: latest
     spec:
+      nodeName: centos111
       containers:
       - name: rec
         image: hands-on/recommendation-service

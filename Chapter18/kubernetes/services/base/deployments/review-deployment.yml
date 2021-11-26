@@ -13,6 +13,7 @@ spec:
         app: review
         version: latest
     spec:
+      nodeName: centos111
       containers:
       - name: rev
         image: hands-on/review-service

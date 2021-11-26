@@ -17,7 +17,7 @@ data:
       web_root: /kiali
     external_services:
       tracing:
-        url: http://jaeger-query.istio-system.svc.cluster.local:16686/jaeger
+        url: http://tracing.istio-system.svc.cluster.local/jaeger
       grafana:
         url: http://grafana.istio-system.svc.cluster.local:3000
       prometheus:

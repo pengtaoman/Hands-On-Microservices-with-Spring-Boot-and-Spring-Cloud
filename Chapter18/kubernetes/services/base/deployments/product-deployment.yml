@@ -13,6 +13,7 @@ spec:
         app: product
         version: latest
     spec:
+      nodeName: centos111
       containers:
       - name: pro
         image: hands-on/product-service

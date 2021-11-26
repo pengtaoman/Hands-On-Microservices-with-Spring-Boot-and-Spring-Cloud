@@ -14,6 +14,7 @@ spec:
         app: product-composite
         version: latest
     spec:
+      nodeName: centos111
       containers:
       - name: comp
         image: hands-on/product-composite-service

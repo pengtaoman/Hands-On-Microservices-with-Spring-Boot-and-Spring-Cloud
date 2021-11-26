@@ -13,6 +13,7 @@ spec:
         app: auth-server
         version: latest
     spec:
+      nodeName: centos111
       containers:
       - name: auth-server
         image: hands-on/auth-server
