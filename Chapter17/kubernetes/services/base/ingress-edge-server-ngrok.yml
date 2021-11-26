@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - xxxxxxxx.ngrok.io
+    - dd3e-42-84-42-182.ngrok.io
     secretName: tls-ngrok-letsencrypt-certificate
   rules:
-  - host: xxxxxxxx.ngrok.io
+  - host: dd3e-42-84-42-182.ngrok.io
     http:
       paths:
       - path: /oauth
