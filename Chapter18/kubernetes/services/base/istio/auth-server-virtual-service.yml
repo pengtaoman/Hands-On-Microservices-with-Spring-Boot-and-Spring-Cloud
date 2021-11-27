@@ -13,6 +13,7 @@ spec:
         prefix: /oauth
     route:
     - destination:
-        port:
+        port: 
+          number: 80
         host: auth-server
 

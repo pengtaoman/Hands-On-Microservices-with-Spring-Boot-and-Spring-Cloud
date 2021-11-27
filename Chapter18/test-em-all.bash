@@ -10,7 +10,8 @@
 #
 : ${HOST=minikube.me}
 : ${PORT=443}
-: ${HEALTH_URL=http://product-composite.hands-on.svc.cluster.local:4004}
+#: ${HEALTH_URL=http://product-composite.hands-on.svc.cluster.local:4004}
+: ${HEALTH_URL=http://10.110.100.86:4004}
 : ${MGM_PORT=4004}
 : ${PROD_ID_REVS_RECS=2}
 : ${PROD_ID_NOT_FOUND=13}
