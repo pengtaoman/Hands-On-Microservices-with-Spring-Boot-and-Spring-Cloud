@@ -40,6 +40,11 @@ ACCESS_TOKEN=$(curl -X POST -k https://writer:secret@minikube.me/oauth/token  -d
 curl -ks https://minikube.me/product-composite/2 -H "Authorization: Bearer $ACCESS_TOKEN"
 
 
+kubectl -n istio-system apply -f kubernetes/istio/setup/kiali-configmap.yml
+kubectl -n istio-system delete po kiali-dc84967d9-ms7fp
+
+
+https://github.com/kiali/kiali-operator/blob/master/deploy/kiali/kiali_cr.yaml
 
 
 
