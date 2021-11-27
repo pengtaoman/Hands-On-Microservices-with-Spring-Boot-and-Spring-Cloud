@@ -24,6 +24,26 @@ kubectl config set-context $(kubectl config current-context) --namespace=hands-o
  ./kubernetes/scripts/deploy-dev-env.bash
 
 
+[root@centos111 ~]# kb get Gateway
+NAME          AGE
+hands-on-gw   17h
+
+############################################################################
+Chapter18/kubernetes/services/base/istio/jwt-authentication-policy.yml 
+这个规范已经过时，新的还在研究怎么做
+############################################################################
+
+ACCESS_TOKEN=$(curl -X POST -k https://writer:secret@minikube.me/oauth/token  -d grant_type=password -d username=magnus -d password=password -s| jq .access_token -r)
+
+
+
+curl -ks https://minikube.me/product-composite/2 -H "Authorization: Bearer $ACCESS_TOKEN"
+
+
+
+
+
+
 
 
 
