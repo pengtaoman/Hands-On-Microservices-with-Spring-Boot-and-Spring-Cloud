@@ -14,5 +14,29 @@ curl -o 2>/dev/null -s -L -w "%{http_code}" http://kiali.istio-system.svc.cluste
 curl -o 2>/dev/null -s -L -w "%{http_code}" http://grafana.istio-system.svc.cluster.local:3000
 curl -o 2>/dev/null -s -L -w "%{http_code}" http://tracing.istio-system.svc.cluster.local:80
 
+################################################################
+./gradlew build && docker-compose build
+
+kubectl create ns hands-on
+
+kubectl config set-context $(kubectl config current-context) --namespace=hands-on
+
+ ./kubernetes/scripts/deploy-dev-env.bash
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
