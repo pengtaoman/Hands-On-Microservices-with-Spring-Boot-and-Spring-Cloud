@@ -20,9 +20,9 @@ spring.rabbitmq:
   username: guest
   password: '{cipher}17fcf0ae5b8c5cf87de6875b699be4a1746dd493a99d926c7a26a68c422117ef'
 
-spring.cloud.stream.kafka.binder:
-  brokers: 127.0.0.1
-  defaultBrokerPort: 9092
+#spring.cloud.stream.kafka.binder:
+#  brokers: 127.0.0.1
+#  defaultBrokerPort: 9092
 
 spring.zipkin.sender.type: rabbit
 spring.sleuth.sampler.probability: 1.0
@@ -36,7 +36,7 @@ spring.profiles: docker
 
 spring.rabbitmq.host: rabbitmq
 
-spring.cloud.stream.kafka.binder.brokers: kafka
+#spring.cloud.stream.kafka.binder.brokers: kafka
 
 app:
   eureka-server: eureka

@@ -142,11 +142,14 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
     public Flux<Review> getReviews(int productId) {
 
         URI url = UriComponentsBuilder.fromUriString(reviewServiceUrl + "/review?productId={productId}").build(productId);
-
+        System.out.println("################################################### URI ::::" + url);
         LOG.debug("Will call the getReviews API on URL: {}", url);
 
         // Return an empty result if something goes wrong to make it possible for the composite service to return partial responses
-        return getWebClient().get().uri(url).retrieve().bodyToFlux(Review.class).log().onErrorResume(error -> empty());
+        Flux f1 = getWebClient().get().uri(url).retrieve().bodyToFlux(Review.class);
+        f1.log();
+        Flux<Review> fr = f1.onErrorResume(error -> empty());
+        return fr;
 
     }
 
