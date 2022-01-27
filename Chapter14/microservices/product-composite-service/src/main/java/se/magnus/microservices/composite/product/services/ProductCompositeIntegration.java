@@ -145,10 +145,14 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
         System.out.println("################################################### URI ::::" + url);
         LOG.debug("Will call the getReviews API on URL: {}", url);
 
+        //getWebClient().get().uri(url)
         // Return an empty result if something goes wrong to make it possible for the composite service to return partial responses
-        Flux f1 = getWebClient().get().uri(url).retrieve().bodyToFlux(Review.class);
+        WebClient.RequestHeadersSpec<?> uu = getWebClient().get().uri(url);
+        WebClient.ResponseSpec res = uu.retrieve();
+        Flux f1 = res.bodyToFlux(Review.class);
+        Mono<Review> mono =  f1.elementAt(0);
         f1.log();
-        Flux<Review> fr = f1.onErrorResume(error -> empty());
+        Flux<Review> fr = f1.onErrorStop() ;//.onErrorResume(error -> empty());
         return fr;
 
     }

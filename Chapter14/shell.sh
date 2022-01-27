@@ -24,3 +24,17 @@ export SPRING_SECURITY_USER_PASSWORD=${CONFIG_SERVER_PWD}
 ACCESS_TOKEN=$(curl -X POST -k https://writer:secret@localhost:8443/oauth/token  -d grant_type=password -d username=magnus -d password=password -s| jq .access_token -r)
 
 curl -ks https://localhost:8443/product-composite/2 -H "Authorization: Bearer $ACCESS_TOKEN" | jq
+
+
+###放开gateway review的uri
+#gateway.yml 加入
+#- id: review
+#  uri: lb://review
+#  predicates:
+#    - Path=/review/**
+
+curl -ks https://localhost:8443/review?productId=2 -H "Authorization: Bearer $ACCESS_TOKEN" | jq
+
+###ProductCompositeIntegration 中调用http://review 是基于review 服务的bootstrap.yml中application.name
+#这个规则是测试出来的，不是找到文档
+

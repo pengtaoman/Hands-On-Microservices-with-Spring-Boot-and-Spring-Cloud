@@ -18,6 +18,10 @@ spring.cloud.gateway.routes:
   uri: lb://product-composite
   predicates:
   - Path=/product-composite/**
+- id: review
+  uri: lb://review
+  predicates:
+    - Path=/review/**
   #        filters:
   #        - TokenRelay=
 
